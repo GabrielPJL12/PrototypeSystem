@@ -1,0 +1,25 @@
+---How to Create Tables, see template for below---
+
+
+---First drop the table. Start with child tables and follow with parents
+
+drop table example_child
+drop table example_parent
+
+---Now create tables in opposite order. Parent followed by children tables
+---see within tables for examples of primary keys, foreign keys, unique keys, and check constraints
+
+create table example_parent
+(
+	primary_key number constraint sys_example_parent_primary_pk primary key,	
+	unique_key number constraint sys_example_parent_unique_uk unique,
+	check_con number constraint sys_example_parent_check_ck
+		check( (input check constraint notion here) )				----note how now comma is needed on last column within table
+);
+create table example_child
+(
+	foreign_key number constraint sys_example_child_foreign_fk			----note notice how 'foreign key' is not needed like other keys after sys_.
+		references example_parent (primary_key) 					---- this references another key in a parent class
+);
+
+---repeat as necessary for future tables

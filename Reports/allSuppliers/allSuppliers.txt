@@ -1,0 +1,33 @@
+SQL> 
+SQL> -- CPSY 250 F, Database Design and Programming
+SQL> -- Project Deliverable 5: Prototype System
+SQL> -- Gabriel Leclerc
+SQL> -- 2023 / 04 / 21
+SQL> 
+SQL> -- Report Description:
+SQL> 
+SQL> -- SUPPLIER REPORT
+SQL> -- 2. For all suppliers
+SQL> --   a) Total number of products
+SQL> --   b) Total number of orders
+SQL> --   c) Total value of all orders
+SQL> 
+SQL> -- SQL:
+SQL> 
+SQL> column "Value of Orders" format a15
+SQL> SELECT SUM("Total Products") "All Products", SUM("Orders") "All Orders", TO_CHAR(SUM("Total Value"), '$999,990.00') "Value of Orders"
+  2  FROM (SELECT supplier_name "Name", COUNT(product_num) "Total Products"
+  3  	 FROM t_supplier JOIN t_product USING (supplier_num)
+  4  	 GROUP BY supplier_name)
+  5  JOIN (SELECT supplier_name "Name", COUNT(order_num) "Orders", SUM(final_price) "Total Value"
+  6  	 FROM t_supplier JOIN t_product USING (supplier_num) JOIN t_order USING (product_num)
+  7  	 GROUP BY supplier_name)
+  8  	 USING ("Name");
+
+All Products All Orders Value of Orders                                                             
+------------ ---------- ---------------                                                             
+          14         12   $10,045.64                                                                
+
+SQL> CLEAR columns
+SQL> 
+SQL> spool off
