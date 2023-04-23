@@ -7,6 +7,15 @@ SUPPLIER REPORT
 -------------------
 REPORT DESCRIPTION:
 This report shows values for the number of products, number of orders, and value of all orders for each suppliers as well as the total number of products, total number of orders, and total value of all orders for all suppliers.
+The report makes use of:
+1. Joins
+2. Single Row Functions
+3. Group Functions
+4. Subqueries
+5. SQL*PLUS Report Formatting Including:
+  a) BREAK
+  b) COMPUTE
+  c) COLUMN
 -------------------
 EQUIPMENT & MATERIALS:
 1. Windows Computer with a minimum of 16GB RAM and 250GB of free disk space, capable of nested virtualization.
