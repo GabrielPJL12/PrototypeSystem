@@ -62,7 +62,7 @@ insert into t_customer (customer_num, customer_address, cust_prov, cust_city, cu
 --Children
 --7 Products min
 insert into t_product (product_num, parent_category_num, supplier_num, prod_title, prod_description, prod_price, prod_weight_kg, prod_tax_exempt) 
-    values(10073010711355, 001, 00826, 'Tampax Pearl Regular Plastic Tampons, Unscented, 50 Count', 'Your flow is different everyday. Your tampon should be, too.', 12.94, 0.1, 1);
+    values(10073010711355, 001, 00826, 'Tampax Pearl Regular Plastic Tampons', 'Your flow is different everyday. Your tampon should be, too.', 12.94, 0.1, 1);
 insert into t_product (product_num, parent_category_num, supplier_num, prod_title, prod_description, prod_price, prod_weight_kg, prod_tax_exempt) 
     values(4552, 002, 57283, 'VODKOW VODKA', 'We have combined unused milk with vodka into a spirit!', 32.95, 0.75, 0);
 insert into t_product (product_num, parent_category_num, supplier_num, prod_title, prod_description, prod_price, prod_weight_kg, prod_tax_exempt) 

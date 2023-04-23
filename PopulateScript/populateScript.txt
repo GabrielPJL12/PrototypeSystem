@@ -137,7 +137,7 @@ SQL>
 SQL> --Children
 SQL> --7 Products min
 SQL> insert into t_product (product_num, parent_category_num, supplier_num, prod_title, prod_description, prod_price, prod_weight_kg, prod_tax_exempt)
-  2  	 values(10073010711355, 001, 00826, 'Tampax Pearl Regular Plastic Tampons, Unscented, 50 Count', 'Your flow is different everyday. Your tampon should be, too.', 12.94, 0.1, 1);
+  2  	 values(10073010711355, 001, 00826, 'Tampax Pearl Regular Plastic Tampons', 'Your flow is different everyday. Your tampon should be, too.', 12.94, 0.1, 1);
 
 1 row created.
 
@@ -491,7 +491,7 @@ PROD_DESCRIPTION
 PROD_PRICE PROD_WEIGHT_KG P                                                                         
 ---------- -------------- -                                                                         
  1.0073E+13                   1          826                                                        
-Tampax Pearl Regular Plastic Tampons, Unscented, 50 Count                                           
+Tampax Pearl Regular Plastic Tampons                                                                
 Your flow is different everyday. Your tampon should be, too.                                        
      12.94             .1 1                                                                         
                                                                                                     

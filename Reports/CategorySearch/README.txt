@@ -3,10 +3,12 @@ Project Deliverable 5: Prototype System
 Gabriel Leclerc
 2023 / 04 / 23
 -------------------
-
+CATEGORY SEARCH REPORT
 -------------------
 REPORT DESCRIPTION:
-
+This report accepts a category number using the ACCEPT keyword and returns all products that are part of that category, with their corresponding price.
+The report makes use of:
+1. ACCEPT Keyword
 -------------------
 EQUIPMENT & MATERIALS:
 1. Windows Computer with a minimum of 16GB RAM and 250GB of free disk space, capable of nested virtualization.

@@ -1,0 +1,17 @@
+== Parent Categories ==
+1 - Toiletries
+2 - Alcohol and Drugs
+3 - Food
+4 - Technology
+5 - Music
+6 - Fitness
+7 - Education
+
+Enter desired category number:
+1
+
+Products                                 Price                                                      
+---------------------------------------- ----------                                                 
+Tampax Pearl Regular Plastic Tampons         $12.94                                                 
+Pads                                         $50.97                                                 
+
