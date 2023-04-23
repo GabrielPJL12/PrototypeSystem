@@ -1,6 +1,6 @@
 CPSY 250 F, Database Design and Programming
 Project Deliverable 5: Prototype System
-Joseph Adam, Zachary Larrive, Gabriel Leclerc, Benjamin Roskey
+Joseph Adam, Gabriel Leclerc, Benjamin Roskey
 2023 / 04 / 23
 -------------------
 Order Details
