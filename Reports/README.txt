@@ -7,6 +7,15 @@ REPORTS
 -------------------
 REPORT DESCRIPTIONS:
 
+allProducts:
+This report shows all products and their titles, descriptions and price. It then adds up all the prices and totals them.
+This report makes use of:
+1. BREAK
+2. COMPUTE
+3. BTITLE
+4. TTITLE
+5. COLUMN
+
 Supplier:
 This report shows values for the number of products, number of orders, and value of all orders for each suppliers as well as the total number of products, total number of orders, and total value of all orders for all suppliers.
 The report makes use of:
