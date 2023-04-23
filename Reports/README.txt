@@ -24,6 +24,11 @@ This report accepts a category number using the ACCEPT keyword and returns all p
 The report makes use of:
 1. ACCEPT Keyword
 
+Order Details:
+Output all the details on an order, including shipping and appropriate provincial and federal taxes, for AB only.
+The report makes use of:
+1. Restricting Rows and Sorting Data
+
 -------------------
 EQUIPMENT & MATERIALS:
 1. Windows Computer with a minimum of 16GB RAM and 250GB of free disk space, capable of nested virtualization.
