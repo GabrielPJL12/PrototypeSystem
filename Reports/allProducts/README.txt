@@ -26,7 +26,7 @@ CREATE & POPULATE THE DATABASE:
 3. Verify the tables.
 -------------------
 RUN THE SCRIPT:
-1. Edit the path on line 1 of eachSupplier.sql in the eachSupplier folder to the desired path of the spool file (do this using an IDE).
+1. Edit the path on line 1 of allProducts.sql in the eachSupplier folder to the desired path of the spool file (do this using an IDE).
 2. Run the eachSupplier.sql script using Oracle Version 11g or better through SQL*PLUS.
   a) This will generate a spool file at the desired path.
 -------------------
