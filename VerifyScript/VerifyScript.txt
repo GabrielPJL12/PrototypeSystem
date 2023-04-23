@@ -1,0 +1,493 @@
+SQL> 
+SQL> --delete existing data, children followed by parents
+SQL> 
+SQL> delete t_review;
+
+5 rows deleted.
+
+SQL> delete t_product_order;
+
+6 rows deleted.
+
+SQL> delete t_sub_category;
+
+7 rows deleted.
+
+SQL> delete t_order;
+
+6 rows deleted.
+
+SQL> delete t_product;
+
+7 rows deleted.
+
+SQL> delete t_customer;
+
+5 rows deleted.
+
+SQL> delete t_category;
+
+7 rows deleted.
+
+SQL> delete t_supplier;
+
+6 rows deleted.
+
+SQL> 
+SQL> --insert data, parents followed by children
+SQL> 
+SQL> --Parents
+SQL> --3 suppliers min
+SQL> insert into t_supplier (supplier_num, supplier_name, available_product_qty, est_days_for_delivery, supplier_email, supplier_prov, supplier_city)
+  2  	 values(00826, 'Proctor and Gamble', 1000, 1, 'p&g@help.com', 'BC', 'Vancouver');
+Enter value for g: 5
+old   2:     values(00826, 'Proctor and Gamble', 1000, 1, 'p&g@help.com', 'BC', 'Vancouver')
+new   2:     values(00826, 'Proctor and Gamble', 1000, 1, 'p5@help.com', 'BC', 'Vancouver')
+
+1 row created.
+
+SQL> insert into t_supplier (supplier_num, supplier_name, available_product_qty, est_days_for_delivery, supplier_email, supplier_prov, supplier_city)
+  2  	 values(57283, 'Dairy Distillery', 542, 4, 'info@dairydistillery.com', 'ON', 'Almonte');
+
+1 row created.
+
+SQL> insert into t_supplier (supplier_num, supplier_name, available_product_qty, est_days_for_delivery, supplier_email, supplier_prov, supplier_city)
+  2  	 values(12345, 'My Daily Brett', 300, 5, 'INFO@OURDAILYBRETT.COM', 'AB', 'Calgary');
+
+1 row created.
+
+SQL> insert into t_supplier (supplier_num, supplier_name, available_product_qty, est_days_for_delivery, supplier_email, supplier_prov, supplier_city)
+  2  	 values(62385, 'CDW', 10000, 7, 'cdw@cdwcanada.com', 'QC', 'Montreal');
+
+1 row created.
+
+SQL> insert into t_supplier (supplier_num, supplier_name, available_product_qty, est_days_for_delivery, supplier_email, supplier_prov, supplier_city)
+  2  	 values(987654, 'Fitness Ltd.', 500, 7, 'fitness@fitnessltd.com', 'NT', 'Yellowknife');
+
+1 row created.
+
+SQL> insert into t_supplier (supplier_num, supplier_name, available_product_qty, est_days_for_delivery, supplier_email, supplier_prov, supplier_city)
+  2  	 values(99999, 'MTV', 10000, 5, 'mtv@mtvmusic.com', 'SK', 'Regina');
+
+1 row created.
+
+SQL> 
+SQL> 
+SQL> --7 products min
+SQL> insert into t_category (parent_category_num, category_name)
+  2  	 values(001, 'Toiletries');
+
+1 row created.
+
+SQL> insert into t_category (parent_category_num, category_name)
+  2  	 values(002, 'Alcohol and Drugs');
+
+1 row created.
+
+SQL> insert into t_category (parent_category_num, category_name)
+  2  	 values(003, 'Food');
+
+1 row created.
+
+SQL> insert into t_category (parent_category_num, category_name)
+  2  	 values(004, 'Technology');
+
+1 row created.
+
+SQL> insert into t_category (parent_category_num, category_name)
+  2  	 values(005, 'Music');
+
+1 row created.
+
+SQL> insert into t_category (parent_category_num, category_name)
+  2  	 values(006, 'Fitness');
+
+1 row created.
+
+SQL> insert into t_category (parent_category_num, category_name)
+  2  	 values(007, 'Education');
+
+1 row created.
+
+SQL> 
+SQL> --5 customers min. some with orders, some without. customers should be from 3 different provinces
+SQL> insert into t_customer (customer_num, customer_address, cust_prov, cust_city, cust_postal_code, cust_phone_num, cust_email, is_member)
+  2  	 values(1, '123 17th Ave SW', 'AB', 'Calgary', 'T2S0Y4', '403.555.6666', 'connor@gmail.com', 1);
+
+1 row created.
+
+SQL> insert into t_customer (customer_num, customer_address, cust_prov, cust_city, cust_postal_code, cust_phone_num, cust_email, is_member)
+  2  	 values(2, '33 Hawthorne Street', 'NS', 'Antigonish', 'B2G1A2', '902.768.4552', 'PeterH@gmail.com', 0);
+
+1 row created.
+
+SQL> insert into t_customer (customer_num, customer_address, cust_prov, cust_city, cust_postal_code, cust_phone_num, cust_email, is_member)
+  2  	 values(3, '777 Pacific Blvd', 'BC', 'Vancouver', 'V6B4Y8', '604.669.2300', 'bcplace@bcplace.com', 0);
+
+1 row created.
+
+SQL> insert into t_customer (customer_num, customer_address, cust_prov, cust_city, cust_postal_code, cust_phone_num, cust_email, is_member)
+  2  	 values(4, '555 Saddledome Rise SE', 'AB', 'Calgary', 'T2G2W1', '403.777.4646', 'dome@dome.com', 1);
+
+1 row created.
+
+SQL> insert into t_customer (customer_num, customer_address, cust_prov, cust_city, cust_postal_code, cust_phone_num, cust_email, is_member)
+  2  	 values(5, '1301 16 Ave NW', 'AB', 'Calgary', 'T2M0L4', '403.284.7248', 'internation@sait.ca', 1);
+
+1 row created.
+
+SQL> 
+SQL> --Children
+SQL> --7 Products min
+SQL> insert into t_product (product_num, parent_category_num, supplier_num, prod_title, prod_description, prod_price, prod_weight_kg, prod_tax_exempt)
+  2  	 values(1357, 001, 00826, 'Tampax Pearl Regular Plastic Tampons, Unscented, 50 Count', 'Your flow is different everyday. Your tampon should be, too.', 12.94, 0.1, 1);
+
+1 row created.
+
+SQL> insert into t_product (product_num, parent_category_num, supplier_num, prod_title, prod_description, prod_price, prod_weight_kg, prod_tax_exempt)
+  2  	 values(4552, 002, 57283, 'VODKOW VODKA', 'We have combined unused milk with vodka into a spirit!', 32.95, 0.75, 0);
+
+1 row created.
+
+SQL> insert into t_product (product_num, parent_category_num, supplier_num, prod_title, prod_description, prod_price, prod_weight_kg, prod_tax_exempt)
+  2  	 values(2300, 003, 12345, 'Catering Event', 'Min spend $100. Let us do the work!', 100, 10, 0);
+
+1 row created.
+
+SQL> insert into t_product (product_num, parent_category_num, supplier_num, prod_title, prod_description, prod_price, prod_weight_kg, prod_tax_exempt)
+  2  	 values(7248, 004, 62385, 'Samsung Monitor', 'Samsung  S32A804NMN - LED monitor - 4K - 32', 551.99, 7, 0);
+
+1 row created.
+
+SQL> insert into t_product (product_num, parent_category_num, supplier_num, prod_title, prod_description, prod_price, prod_weight_kg, prod_tax_exempt)
+  2  	 values(4646, 006, 987654, 'Dumbbell Rack', 'Storage system that allows one to store both dumbbells and kettlebells.', 673.00, 80, 0);
+
+1 row created.
+
+SQL> insert into t_product (product_num, parent_category_num, supplier_num, prod_title, prod_description, prod_price, prod_weight_kg, prod_tax_exempt)
+  2  	 values(4567, 005, 99999, 'Speaker', 'To really turn the party up to 11. Free shipping with members!', 1500, 30, 0 );
+
+1 row created.
+
+SQL> insert into t_product (product_num, parent_category_num, supplier_num, prod_title, prod_description, prod_price, prod_weight_kg, prod_tax_exempt)
+  2  	 values(6666, 007, 62385, 'Online Learning', 'Learn C# through CDW!', 100, 0.1, 1);
+
+1 row created.
+
+SQL> 
+SQL> --6 orders min
+SQL> insert into t_order (order_num, customer_num, product_num, order_date, est_deliver_date, final_price, shipping_cost, tax_cost, shipping_prov)
+  2  	 values(0045, 1, 1357, '20-Feb-23', '21-Feb-23', 12.94, 0, 0, 'AB');
+
+1 row created.
+
+SQL> insert into t_order (order_num, customer_num, product_num, order_date, est_deliver_date, final_price, shipping_cost, tax_cost, shipping_prov)
+  2  	 values(902, 2, 4552, '24-Feb-23', '28-Feb-23', 64.82, 21.92, 9.95, 'NS');
+
+1 row created.
+
+SQL> insert into t_order (order_num, customer_num, product_num, order_date, est_deliver_date, final_price, shipping_cost, tax_cost, shipping_prov)
+  2  	 values(604, 3, 2300, '01-Jan-23', '02-Feb-23', 1129.97, 79.97, 50, 'BC');
+
+1 row created.
+
+SQL> insert into t_order (order_num, customer_num, product_num, order_date, est_deliver_date, final_price, shipping_cost, tax_cost, shipping_prov)
+  2  	 values(403, 5, 7248, '01-May-20', '08-May-20', 1309.53, 39.95, 165.60, 'AB');
+
+1 row created.
+
+SQL> insert into t_order (order_num, customer_num, product_num, order_date, est_deliver_date, final_price, shipping_cost, tax_cost, shipping_prov)
+  2  	 values(777, 4, 4646, '06-June-19', '15-Jun-19', 780.56, 79.97, 27.59, 'NL');
+
+1 row created.
+
+SQL> insert into t_order (order_num, customer_num, product_num, order_date, est_deliver_date, final_price, shipping_cost, tax_cost, shipping_prov)
+  2  	 values(123, 1, 4567, '07-Jul-21', '08-Jul-21', 1725, 0, 225 , 'PE');
+
+1 row created.
+
+SQL> 
+SQL> insert into t_sub_category (sub_category_num, parent_category_num, sub_category_name)
+  2  	 values(0011, 001, 'Tampons');
+
+1 row created.
+
+SQL> insert into t_sub_category (sub_category_num, parent_category_num, sub_category_name)
+  2  	 values(0022, 002, 'Spirits');
+
+1 row created.
+
+SQL> insert into t_sub_category (sub_category_num, parent_category_num, sub_category_name)
+  2  	 values(0033, 003, 'Catering');
+
+1 row created.
+
+SQL> insert into t_sub_category (sub_category_num, parent_category_num, sub_category_name)
+  2  	 values(0044, 004, 'Monitors');
+
+1 row created.
+
+SQL> insert into t_sub_category (sub_category_num, parent_category_num, sub_category_name)
+  2  	 values(0066, 006, 'Weightlifting Equipment');
+
+1 row created.
+
+SQL> insert into t_sub_category (sub_category_num, parent_category_num, sub_category_name)
+  2  	 values(0055, 005, 'Speakers');
+
+1 row created.
+
+SQL> insert into t_sub_category (sub_category_num, parent_category_num, sub_category_name)
+  2  	 values(0077, 007, 'Distance Learning');
+
+1 row created.
+
+SQL> 
+SQL> --MEGA Children
+SQL> --6 orders min
+SQL> insert into t_product_order (order_num, product_num)
+  2  	 values(0045, 1357);
+
+1 row created.
+
+SQL> insert into t_product_order (order_num, product_num)
+  2  	 values(902, 4552);
+
+1 row created.
+
+SQL> insert into t_product_order (order_num, product_num)
+  2  	 values(604, 2300);
+
+1 row created.
+
+SQL> insert into t_product_order (order_num, product_num)
+  2  	 values(403, 7248);
+
+1 row created.
+
+SQL> insert into t_product_order (order_num, product_num)
+  2  	 values(777, 4646);
+
+1 row created.
+
+SQL> insert into t_product_order (order_num, product_num)
+  2  	 values(123, 4567);
+
+1 row created.
+
+SQL> 
+SQL> --5 review min
+SQL> insert into t_review (review_num, review_customer_num, review_product_num, review_price, review_weight, review_tax_exempt, review_rating, review_comments, date_created)
+  2  	 values(111, 1, 1357, 12.98, 0.1, 1, 4, 'No complaints from the wife.', '28-Feb-23');
+
+1 row created.
+
+SQL> insert into t_review (review_num, review_customer_num, review_product_num, review_price, review_weight, review_tax_exempt, review_rating, review_comments, date_created)
+  2  	 values(222, 2, 4552, 64.82, 3.5, 0, 3, 'Orderd 5. Just Ok. Has an Ouzo taste.', '05-Jun-21');
+
+1 row created.
+
+SQL> insert into t_review (review_num, review_customer_num, review_product_num, review_price, review_weight, review_tax_exempt, review_rating, review_comments, date_created)
+  2  	 values(333, 3, 2300, 1129.97, 90, 0, 5, 'Fantastic! Did not have to worry about anything from shipping or cooking!', '15-Feb-23');
+
+1 row created.
+
+SQL> insert into t_review (review_num, review_customer_num, review_product_num, review_price, review_weight, review_tax_exempt, review_rating, review_comments, date_created)
+  2  	 values(555, 5, 7248, 1309.53, 14, 0, 4, 'Minor Scratches on Stand. Monitor works excellent though.', '25-May-20');
+
+1 row created.
+
+SQL> insert into t_review (review_num, review_customer_num, review_product_num, review_price, review_weight, review_tax_exempt, review_rating, review_comments, date_created)
+  2  	 values(444, 4, 4646, 780.56, 80, 0, 5, 'Easy to put together, very sturdy.', '17-Jul-21');
+
+1 row created.
+
+SQL> 
+SQL> --verify that the inserts worked
+SQL> select * from t_supplier;
+
+SUPPLIER_NUM SUPPLIER_NAME                                      AVAILABLE_PRODUCT_QTY EST_DAYS_FOR_DELIVERY                         
+------------ -------------------------------------------------- --------------------- ---------------------                         
+SUPPLIER_EMAIL                                     SUPPLIER_PROV                                                                    
+-------------------------------------------------- --------------------------------------------------                               
+SUPPLIER_CITY                                                                                                                       
+--------------------------------------------------                                                                                  
+         826 Proctor and Gamble                                                  1000                     1                         
+p5@help.com                                        BC                                                                               
+Vancouver                                                                                                                           
+                                                                                                                                    
+       57283 Dairy Distillery                                                     542                     4                         
+info@dairydistillery.com                           ON                                                                               
+Almonte                                                                                                                             
+                                                                                                                                    
+       12345 My Daily Brett                                                       300                     5                         
+INFO@OURDAILYBRETT.COM                             AB                                                                               
+Calgary                                                                                                                             
+                                                                                                                                    
+       62385 CDW                                                                10000                     7                         
+cdw@cdwcanada.com                                  QC                                                                               
+Montreal                                                                                                                            
+                                                                                                                                    
+      987654 Fitness Ltd.                                                         500                     7                         
+fitness@fitnessltd.com                             NT                                                                               
+Yellowknife                                                                                                                         
+                                                                                                                                    
+       99999 MTV                                                                10000                     5                         
+mtv@mtvmusic.com                                   SK                                                                               
+Regina                                                                                                                              
+                                                                                                                                    
+
+6 rows selected.
+
+SQL> select * from t_category;
+
+PARENT_CATEGORY_NUM CATEGORY_NAME                                                                                                   
+------------------- --------------------------------------------------                                                              
+                  1 Toiletries                                                                                                      
+                  2 Alcohol and Drugs                                                                                               
+                  3 Food                                                                                                            
+                  4 Technology                                                                                                      
+                  5 Music                                                                                                           
+                  6 Fitness                                                                                                         
+                  7 Education                                                                                                       
+
+7 rows selected.
+
+SQL> select * from t_customer;
+
+CUSTOMER_NUM CUSTOMER_ADDRESS                                                                                     CU                
+------------ ---------------------------------------------------------------------------------------------------- --                
+CUST_CITY                                          CUST_P CUST_PHONE_N CUST_EMAIL                                         I         
+-------------------------------------------------- ------ ------------ -------------------------------------------------- -         
+           1 123 17th Ave SW                                                                                      AB                
+Calgary                                            T2S0Y4 403.555.6666 connor@gmail.com                                   1         
+                                                                                                                                    
+           2 33 Hawthorne Street                                                                                  NS                
+Antigonish                                         B2G1A2 902.768.4552 PeterH@gmail.com                                   0         
+                                                                                                                                    
+           3 777 Pacific Blvd                                                                                     BC                
+Vancouver                                          V6B4Y8 604.669.2300 bcplace@bcplace.com                                0         
+                                                                                                                                    
+           4 555 Saddledome Rise SE                                                                               AB                
+Calgary                                            T2G2W1 403.777.4646 dome@dome.com                                      1         
+                                                                                                                                    
+           5 1301 16 Ave NW                                                                                       AB                
+Calgary                                            T2M0L4 403.284.7248 internation@sait.ca                                1         
+                                                                                                                                    
+
+SQL> select * from t_order;
+
+ ORDER_NUM CUSTOMER_NUM PRODUCT_NUM ORDER_DAT EST_DELIV FINAL_PRICE SHIPPING_COST   TAX_COST SH                                     
+---------- ------------ ----------- --------- --------- ----------- ------------- ---------- --                                     
+        45            1        1357 20-FEB-23 21-FEB-23       12.94             0          0 AB                                     
+       902            2        4552 24-FEB-23 28-FEB-23       64.82         21.92       9.95 NS                                     
+       604            3        2300 01-JAN-23 02-FEB-23     1129.97         79.97         50 BC                                     
+       403            5        7248 01-MAY-20 08-MAY-20     1309.53         39.95      165.6 AB                                     
+       777            4        4646 06-JUN-19 15-JUN-19      780.56         79.97      27.59 NL                                     
+       123            1        4567 07-JUL-21 08-JUL-21        1725             0        225 PE                                     
+
+6 rows selected.
+
+SQL> select * from t_product;
+
+PRODUCT_NUM PARENT_CATEGORY_NUM SUPPLIER_NUM                                                                                        
+----------- ------------------- ------------                                                                                        
+PROD_TITLE                                                                                                                          
+----------------------------------------------------------------------------------------------------                                
+PROD_DESCRIPTION                                                                                     PROD_PRICE PROD_WEIGHT_KG P    
+---------------------------------------------------------------------------------------------------- ---------- -------------- -    
+       1357                   1          826                                                                                        
+Tampax Pearl Regular Plastic Tampons, Unscented, 50 Count                                                                           
+Your flow is different everyday. Your tampon should be, too.                                              12.94             .1 1    
+                                                                                                                                    
+       4552                   2        57283                                                                                        
+VODKOW VODKA                                                                                                                        
+We have combined unused milk with vodka into a spirit!                                                    32.95            .75 0    
+                                                                                                                                    
+       2300                   3        12345                                                                                        
+Catering Event                                                                                                                      
+Min spend $100. Let us do the work!                                                                         100             10 0    
+                                                                                                                                    
+       7248                   4        62385                                                                                        
+Samsung Monitor                                                                                                                     
+Samsung  S32A804NMN - LED monitor - 4K - 32                                                              551.99              7 0    
+                                                                                                                                    
+       4646                   6       987654                                                                                        
+Dumbbell Rack                                                                                                                       
+Storage system that allows one to store both dumbbells and kettlebells.                                     673             80 0    
+                                                                                                                                    
+       4567                   5        99999                                                                                        
+Speaker                                                                                                                             
+To really turn the party up to 11. Free shipping with members!                                             1500             30 0    
+                                                                                                                                    
+       6666                   7        62385                                                                                        
+Online Learning                                                                                                                     
+Learn C# through CDW!                                                                                       100             .1 1    
+                                                                                                                                    
+
+7 rows selected.
+
+SQL> select * from t_sub_category;
+
+SUB_CATEGORY_NUM PARENT_CATEGORY_NUM SUB_CATEGORY_NAME                                                                              
+---------------- ------------------- --------------------------------------------------                                             
+              11                   1 Tampons                                                                                        
+              22                   2 Spirits                                                                                        
+              33                   3 Catering                                                                                       
+              44                   4 Monitors                                                                                       
+              66                   6 Weightlifting Equipment                                                                        
+              55                   5 Speakers                                                                                       
+              77                   7 Distance Learning                                                                              
+
+7 rows selected.
+
+SQL> select * from t_product_order;
+
+ ORDER_NUM PRODUCT_NUM                                                                                                              
+---------- -----------                                                                                                              
+        45        1357                                                                                                              
+       123        4567                                                                                                              
+       403        7248                                                                                                              
+       604        2300                                                                                                              
+       777        4646                                                                                                              
+       902        4552                                                                                                              
+
+6 rows selected.
+
+SQL> select * from t_review;
+
+REVIEW_NUM REVIEW_CUSTOMER_NUM REVIEW_PRODUCT_NUM REVIEW_PRICE REVIEW_WEIGHT R REVIEW_RATING                                        
+---------- ------------------- ------------------ ------------ ------------- - -------------                                        
+REVIEW_COMMENTS                                                                                                                     
+------------------------------------------------------------------------------------------------------------------------------------
+DATE_CREA                                                                                                                           
+---------                                                                                                                           
+       111                   1               1357        12.98            .1 1             4                                        
+No complaints from the wife.                                                                                                        
+28-FEB-23                                                                                                                           
+                                                                                                                                    
+       222                   2               4552        64.82           3.5 0             3                                        
+Orderd 5. Just Ok. Has an Ouzo taste.                                                                                               
+05-JUN-21                                                                                                                           
+                                                                                                                                    
+       333                   3               2300      1129.97            90 0             5                                        
+Fantastic! Did not have to worry about anything from shipping or cooking!                                                           
+15-FEB-23                                                                                                                           
+                                                                                                                                    
+       555                   5               7248      1309.53            14 0             4                                        
+Minor Scratches on Stand. Monitor works excellent though.                                                                           
+25-MAY-20                                                                                                                           
+                                                                                                                                    
+       444                   4               4646       780.56            80 0             5                                        
+Easy to put together, very sturdy.                                                                                                  
+17-JUL-21                                                                                                                           
+                                                                                                                                    
+
+SQL> 
+SQL> 
+SQL> 
+SQL> commit;
+
+Commit complete.
+
+SQL> spool off
