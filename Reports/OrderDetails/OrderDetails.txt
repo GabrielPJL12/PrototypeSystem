@@ -1,0 +1,6 @@
+
+Order Number Customer Number Product Number Order Dat Est. Delivery Date   Final Price Shipping Cost   Tax Cost Shipping Province                                                                       
+------------ --------------- -------------- --------- -------------------- ----------- ------------- ---------- ------------------                                                                      
+          45               1           1357 20-FEB-23 21-FEB-23                  12.94             0          0 AB                                                                                      
+         403               5           7248 01-MAY-20 08-MAY-20                1309.53         39.95      165.6 AB                                                                                      
+
