@@ -2,7 +2,7 @@
 set echo on
 set linesize 100
 set pagesize 66
-spool C:\CPRG250s\.BuildScript.txt
+spool C:\CPRG250s\buildTimber.txt
 
 --drop tables, child tables followed by parent tables
 --MEGA children
