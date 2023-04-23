@@ -7,11 +7,22 @@ REPORTS
 -------------------
 REPORT DESCRIPTIONS:
 
-eachSupplier:
-This report shows values for the number of products, number of orders, and value of all orders for each supplier.
+Supplier:
+This report shows values for the number of products, number of orders, and value of all orders for each suppliers as well as the total number of products, total number of orders, and total value of all orders for all suppliers.
+The report makes use of:
+1. Joins
+2. Single Row Functions
+3. Group Functions
+4. Subqueries
+5. SQL*PLUS Report Formatting Including:
+  a) BREAK
+  b) COMPUTE
+  c) COLUMN
 
-allSuppliers:
-This report shows values for the total number of products, total number of orders, and total value of all orders for all suppliers.
+categorySearch:
+This report accepts a category number using the ACCEPT keyword and returns all products that are part of that category, with their corresponding price.
+The report makes use of:
+1. ACCEPT Keyword
 
 -------------------
 EQUIPMENT & MATERIALS:
