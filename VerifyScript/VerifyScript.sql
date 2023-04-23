@@ -2,7 +2,7 @@
 set echo on
 set linesize 132
 set pagesize 66
-spool C:\CPRG250s\PD4_PopulatingDatabase\VerifyScript\VerifyScript.txt
+spool Z:\PrototypeSystem\VerifyScript\VerifyScript.txt
 
 --delete existing data, children followed by parents
 

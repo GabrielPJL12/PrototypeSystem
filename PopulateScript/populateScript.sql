@@ -1,6 +1,6 @@
 --Populate Script for Project Deliverable 4
 set echo on
-spool C:\CPRG250s\populateTimber.txt
+spool Z:\PrototypeSystem\PopulateScript\populateScript.txt
 
 --delete existing data, children followed by parents
 
