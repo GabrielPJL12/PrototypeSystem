@@ -1,4 +1,3 @@
-set echo on
 spool Z:\Code\PrototypeSystem\eachSupplier.txt
 
 -- CPSY 250 F, Database Design and Programming
