@@ -1,18 +1,3 @@
-SQL> 
-SQL> column "Name" format a20
-SQL> COLUMN DUMMY NOPRINT
-SQL> COMPUTE SUM OF "Products" ON DUMMY
-SQL> COMPUTE SUM OF "Orders" ON DUMMY
-SQL> COMPUTE SUM OF "Value ($)" ON DUMMY
-SQL> BREAK ON DUMMY
-SQL> SELECT NULL DUMMY, "Name", "Products", "Orders", "Value ($)"
-  2  FROM (SELECT supplier_name "Name", COUNT(product_num) "Products"
-  3  	 FROM t_supplier JOIN t_product USING (supplier_num)
-  4  	 GROUP BY supplier_name)
-  5  JOIN (SELECT supplier_name "Name", COUNT(order_num) "Orders", SUM(final_price) "Value ($)"
-  6  	 FROM t_supplier JOIN t_product USING (supplier_num) JOIN t_order USING (product_num)
-  7  	 GROUP BY supplier_name)
-  8  	 USING ("Name");
 
 Name                   Products     Orders  Value ($)                                               
 -------------------- ---------- ---------- ----------                                               
@@ -27,6 +12,3 @@ MTV                           2          2       3450
 
 6 rows selected.
 
-SQL> CLEAR columns
-SQL> 
-SQL> spool off

@@ -3,35 +3,35 @@ SQL> --delete existing data, children followed by parents
 SQL> 
 SQL> delete t_review;
 
-0 rows deleted.
+5 rows deleted.
 
 SQL> delete t_product_order;
 
-0 rows deleted.
+6 rows deleted.
 
 SQL> delete t_sub_category;
 
-0 rows deleted.
+7 rows deleted.
 
 SQL> delete t_order;
 
-0 rows deleted.
+12 rows deleted.
 
 SQL> delete t_product;
 
-0 rows deleted.
+14 rows deleted.
 
 SQL> delete t_customer;
 
-0 rows deleted.
+5 rows deleted.
 
 SQL> delete t_category;
 
-0 rows deleted.
+7 rows deleted.
 
 SQL> delete t_supplier;
 
-0 rows deleted.
+6 rows deleted.
 
 SQL> 
 SQL> --insert data, parents followed by children
@@ -39,10 +39,7 @@ SQL>
 SQL> --Parents
 SQL> --3 suppliers min
 SQL> insert into t_supplier (supplier_num, supplier_name, available_product_qty, est_days_for_delivery, supplier_email, supplier_prov, supplier_city)
-  2  	 values(00826, 'Proctor and Gamble', 1000, 1, 'p&g@help.com', 'BC', 'Vancouver');
-Enter value for g: &g
-old   2:     values(00826, 'Proctor and Gamble', 1000, 1, 'p&g@help.com', 'BC', 'Vancouver')
-new   2:     values(00826, 'Proctor and Gamble', 1000, 1, 'p&g@help.com', 'BC', 'Vancouver')
+  2  	 values(00826, 'Proctor and Gamble', 1000, 1, 'pg@help.com', 'BC', 'Vancouver');
 
 1 row created.
 
@@ -382,7 +379,7 @@ SUPPLIER_PROV
 SUPPLIER_CITY                                                                                       
 --------------------------------------------------                                                  
          826 Proctor and Gamble                                                  1000               
-                    1 p&g@help.com                                                                  
+                    1 pg@help.com                                                                   
 BC                                                                                                  
 Vancouver                                                                                           
                                                                                                     

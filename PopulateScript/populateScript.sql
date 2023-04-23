@@ -18,7 +18,7 @@ delete t_supplier;
 --Parents
 --3 suppliers min
 insert into t_supplier (supplier_num, supplier_name, available_product_qty, est_days_for_delivery, supplier_email, supplier_prov, supplier_city)
-    values(00826, 'Proctor and Gamble', 1000, 1, 'p&g@help.com', 'BC', 'Vancouver');
+    values(00826, 'Proctor and Gamble', 1000, 1, 'pg@help.com', 'BC', 'Vancouver');
 insert into t_supplier (supplier_num, supplier_name, available_product_qty, est_days_for_delivery, supplier_email, supplier_prov, supplier_city)
     values(57283, 'Dairy Distillery', 542, 4, 'info@dairydistillery.com', 'ON', 'Almonte');
 insert into t_supplier (supplier_num, supplier_name, available_product_qty, est_days_for_delivery, supplier_email, supplier_prov, supplier_city)
