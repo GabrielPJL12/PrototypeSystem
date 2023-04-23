@@ -8,7 +8,7 @@ REPORTS
 REPORT DESCRIPTIONS:
 
 eachSupplier:
-This report shows values for the total number of products, total number of orders, and total value of all orders for each supplier.
+This report shows values for the number of products, number of orders, and value of all orders for each supplier.
 
 allSuppliers:
 This report shows values for the total number of products, total number of orders, and total value of all orders for all suppliers.
