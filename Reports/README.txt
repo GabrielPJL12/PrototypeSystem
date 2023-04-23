@@ -7,10 +7,10 @@ REPORTS
 -------------------
 REPORT DESCRIPTIONS:
 
-eachSupplier.sql:
+eachSupplier:
 This report shows values for the total number of products, total number of orders, and total value of all orders for each supplier.
 
-allSuppliers.sql:
+allSuppliers:
 This report shows values for the total number of products, total number of orders, and total value of all orders for all suppliers.
 
 -------------------
