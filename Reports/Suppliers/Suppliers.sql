@@ -1,4 +1,5 @@
-spool Z:\PrototypeSystem\Reports\Supplier\Suppliers.txt
+set echo off 
+spool Z:\PrototypeSystem\Reports\Suppliers\Suppliers.txt
 
 column "Name" format a20
 COLUMN DUMMY NOPRINT

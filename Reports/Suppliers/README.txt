@@ -6,7 +6,7 @@ Gabriel Leclerc
 SUPPLIER REPORT: EACH SUPPLIER
 -------------------
 REPORT DESCRIPTION:
-This report shows values for the total number of products, total number of orders, and total value of all orders for each suppliers.
+This report shows values for the number of products, number of orders, and value of all orders for each suppliers and the total number of products, total number of orders, and total value of all orders
 -------------------
 EQUIPMENT & MATERIALS:
 1. Windows Computer with a minimum of 16GB RAM and 250GB of free disk space, capable of nested virtualization.
