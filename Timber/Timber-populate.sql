@@ -76,6 +76,21 @@ insert into t_product (product_num, parent_category_num, supplier_num, prod_titl
 insert into t_product (product_num, parent_category_num, supplier_num, prod_title, prod_description, prod_price, prod_weight_kg, prod_tax_exempt) 
     values(666, 007, 62385, 'Online Learning', 'Learn C# through CDW!', 100, 0.1, 1);
 
+insert into t_product (product_num, parent_category_num, supplier_num, prod_title, prod_description, prod_price, prod_weight_kg, prod_tax_exempt) 
+    values(10073010711356, 001, 00826, 'Pads', 'By: PadMakers', 50.97, 0.1, 1);
+insert into t_product (product_num, parent_category_num, supplier_num, prod_title, prod_description, prod_price, prod_weight_kg, prod_tax_exempt) 
+    values(4553, 002, 57283, 'VODKOW MILK', 'We have combined unused milk with used milk into a milk!', 31.95, 0.75, 0);
+insert into t_product (product_num, parent_category_num, supplier_num, prod_title, prod_description, prod_price, prod_weight_kg, prod_tax_exempt) 
+    values(2301, 003, 12345, 'Catering Chef', 'Min spend $200. Let us do the work!', 200, 10, 0);
+insert into t_product (product_num, parent_category_num, supplier_num, prod_title, prod_description, prod_price, prod_weight_kg, prod_tax_exempt) 
+    values(7249, 004, 62385, 'Samsung Remote', 'Samsung  S32A804NMN - LED monitor remote', 25.99, 7, 0);
+insert into t_product (product_num, parent_category_num, supplier_num, prod_title, prod_description, prod_price, prod_weight_kg, prod_tax_exempt) 
+    values(4647, 006, 987654, 'Dumbbell', 'Dumbbells for weight lifting', 200.00, 80, 0);
+insert into t_product (product_num, parent_category_num, supplier_num, prod_title, prod_description, prod_price, prod_weight_kg, prod_tax_exempt) 
+    values(457, 005, 99999, 'Speaker holder', 'To really turn the party up to 12. Free shipping with members!', 150, 30, 0 );
+insert into t_product (product_num, parent_category_num, supplier_num, prod_title, prod_description, prod_price, prod_weight_kg, prod_tax_exempt) 
+    values(667, 007, 62385, 'Online Learning', 'Learn Python through the web!', 100, 0.1, 1);
+
 --6 orders min
 insert into t_order (order_num, customer_num, product_num, order_date, est_deliver_date, final_price, shipping_cost, tax_cost, shipping_prov) 
     values(0045, 1, 10073010711355, '20-Feb-23', '21-Feb-23', 12.94, 0, 0, 'AB');
@@ -89,6 +104,19 @@ insert into t_order (order_num, customer_num, product_num, order_date, est_deliv
     values(777, 4, 4646, '06-June-19', '15-Jun-19', 780.56, 79.97, 27.59, 'NL');
 insert into t_order (order_num, customer_num, product_num, order_date, est_deliver_date, final_price, shipping_cost, tax_cost, shipping_prov) 
     values(123, 1, 456, '07-Jul-21', '08-Jul-21', 1725, 0, 225 , 'PE');
+
+insert into t_order (order_num, customer_num, product_num, order_date, est_deliver_date, final_price, shipping_cost, tax_cost, shipping_prov) 
+    values(0046, 1, 10073010711355, '20-Feb-23', '21-Feb-23', 12.94, 0, 0, 'AB');
+insert into t_order (order_num, customer_num, product_num, order_date, est_deliver_date, final_price, shipping_cost, tax_cost, shipping_prov) 
+    values(903, 2, 4552, '24-Feb-23', '28-Feb-23', 64.82, 21.92, 9.95, 'NS');
+insert into t_order (order_num, customer_num, product_num, order_date, est_deliver_date, final_price, shipping_cost, tax_cost, shipping_prov) 
+    values(605, 3, 2300, '01-Jan-23', '02-Feb-23', 1129.97, 79.97, 50, 'BC');
+insert into t_order (order_num, customer_num, product_num, order_date, est_deliver_date, final_price, shipping_cost, tax_cost, shipping_prov) 
+    values(404, 5, 7248, '01-May-20', '08-May-20', 1309.53, 39.95, 165.60, 'AB');
+insert into t_order (order_num, customer_num, product_num, order_date, est_deliver_date, final_price, shipping_cost, tax_cost, shipping_prov) 
+    values(778, 4, 4646, '06-June-19', '15-Jun-19', 780.56, 79.97, 27.59, 'NL');
+insert into t_order (order_num, customer_num, product_num, order_date, est_deliver_date, final_price, shipping_cost, tax_cost, shipping_prov) 
+    values(124, 1, 456, '07-Jul-21', '08-Jul-21', 1725, 0, 225 , 'PE');
 
 insert into t_sub_category (sub_category_num, parent_category_num, sub_category_name) 
     values(0011, 001, 'Tampons');
